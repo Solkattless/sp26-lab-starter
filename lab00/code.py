@@ -7,6 +7,7 @@ def get_airspeed_velocity_of(unladen_swallow):
 # pretend there's code here...
 
 def fizzbuzz(num):
+<<<<<<< HEAD
   if num % 3 == 0: # edit this line
     if num % 5 == 0:
       print(f"{num}: fizzbuzz")
