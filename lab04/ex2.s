@@ -32,6 +32,8 @@ main:
 #     where ^ is the exponent operator, not XOR
 ex2:
     # Note: Add code BELOW without altering existing lines.
+    addi sp sp -8
+    sw ra 4(sp)
     sw s0 0(sp)
 
     # return 1 if a1 == 0
@@ -44,8 +46,8 @@ ex2:
     jal ra ex2    # call ex2(a0, a1-1)
 
     mul a0 a0 s0  # multiply ex2(a0, a1-1) by s0
-                  # (which contains the value of a0)
-
+                  # (which contains the value of a0
+    
     j ex2_end
 
 ex2_zero_case:
@@ -53,5 +55,7 @@ ex2_zero_case:
 
 ex2_end:
     lw s0 0(sp)
-
+    lw ra 4(sp)
+    addi sp sp 8
+    
     jr ra
